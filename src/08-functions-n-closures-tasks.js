@@ -85,7 +85,7 @@ function getPolynom(...arg) {
  *   ...
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
-function memoize(func) {
+function memoize(/* func */) {
   throw new Error('Not implemented');
 }
 
@@ -184,10 +184,10 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  const count = startFrom - 1;
+  let count = startFrom - 1;
   return function func() {
-    c += 1;
-    return c;
+    count += 1;
+    return count;
   };
 }
 

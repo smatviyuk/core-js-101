@@ -462,8 +462,12 @@ function getIdentityMatrix(/* n */) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  let count = start;
-  return Array(end - start + 1).fill().map(() => { const result = count; count += 1; return result; });
+  let num = start;
+  return Array(end - start + 1).fill().map(() => {
+    const res = num;
+    num += 1;
+    return res;
+  });
 }
 
 /**
@@ -514,9 +518,9 @@ function distinct(arr) {
 function group(array, keySelector, valueSelector) {
   return array.reduce((acc, elem) => {
     if (acc.has(keySelector(elem))) {
-      acc.get(keySelector(e)).push(valueSelector(e));
+      acc.get(keySelector(elem)).push(valueSelector(elem));
     } else {
-      acc.set(keySelector(e)), [valueSelector(e)];
+      acc.set(keySelector(elem), [valueSelector(elem)]);
     }
     return acc;
   },
@@ -538,7 +542,7 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], (x) => x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-  return arr.map((elem) => childrenSelector(e)).flat();
+  return arr.map((elem) => childrenSelector(elem)).flat();
 }
 
 

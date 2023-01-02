@@ -65,11 +65,10 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-  let sum = 0;
-  for (let i = n1; i < n2; i++) {
-    sum += i;
+  if (n1 === n2) {
+    return n1;
   }
-  return sum;
+  return n1 + getSumBetweenNumbers(n1 + 1, n2);
 }
 
 
@@ -178,12 +177,11 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
-      return str[i];
-    }
+  if (!str) {
+    return null;
   }
-  return null;
+  const mas = str.split('');
+  return (mas.slice(1).indexOf(mas[0]) === -1) ? mas[0] : findFirstSingleChar(str.split('').filter((e) => e !== mas[0]).join(''));
 }
 
 
@@ -272,7 +270,7 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(ccn) {
+function isCreditCardNumber(/* ccn */) {
   throw new Error('Not implemented');
 }
 
@@ -419,26 +417,8 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(position) {
-  for (let i = 0; i < 3; i++) {
-    if (position[i][0]) {
-      if (position[i][0] === position[i][1]
-        && position[i][1] === position[i][2]) return position[i][0];
-    }
-    if (position[0][i]) {
-      if (position[0][i] === position[1][i]
-        && position[1][i] === position[2][i]) return position[0][i];
-    }
-  }
-  if (position[0][0]) {
-    if (position[0][0] === position[1][1]
-      && position[1][1] === position[2][2]) return position[0][0];
-  }
-  if (position[0][2]) {
-    if (position[0][2] === position[1][1]
-      && position[1][1] === position[2][0]) return position[0][2];
-  }
-  return undefined;
+function evaluateTicTacToePosition(/* position */) {
+  throw new Error('Not implemented');
 }
 
 
