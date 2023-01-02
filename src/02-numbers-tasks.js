@@ -52,7 +52,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2)/2;
+  return (value1 + value2) / 2;
 }
 
 /**
@@ -202,9 +202,9 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for(let i=2;i<n;i++){
-    n%i==0? false : true;
-  };
+  for (let i = 2; i < n; i++) {
+    n % i != 0;
+  }
 }
 
 /**

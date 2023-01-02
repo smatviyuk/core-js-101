@@ -67,7 +67,7 @@ function getPolynom(...arg) {
     if (arg.length > 2) return arg[0] * x ** 2 + arg[1] * x + arg[2];
     if (arg.length > 1) return arg[0] * x + arg[1];
     return arg[0];
-  }
+  };
 }
 
 
@@ -116,7 +116,7 @@ function retry(func, attempts) {
       }
     }
     return func();
-  }
+  };
 }
 
 
@@ -184,7 +184,7 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  let count = startFrom - 1;
+  const count = startFrom - 1;
   return function func() {
     c += 1;
     return c;

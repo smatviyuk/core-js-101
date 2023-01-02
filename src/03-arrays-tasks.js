@@ -273,7 +273,7 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  return arr.map((value, i) => Array(i+1).fill(value).flat());
+  return arr.map((value, i) => Array(i + 1).fill(value).flat());
 }
 
 
@@ -291,7 +291,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  return arr.sort((a,b) => b - a).slice(0, 3);
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 
@@ -463,7 +463,7 @@ function getIdentityMatrix(/* n */) {
  */
 function getIntervalArray(start, end) {
   let count = start;
-  return Array(end - start + 1).fill().map(() => {const result = count; count += 1; return result});
+  return Array(end - start + 1).fill().map(() => { const result = count; count += 1; return result; });
 }
 
 /**
@@ -578,16 +578,16 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-  let result = [];
+  const result = [];
   if (arr.length < 2) return arr;
 
   const head = Math.floor(arr.length / 2);
   const tail = Math.ceil(arr.length / 2);
 
-  if (arr %2 !== 0) {
+  if (arr % 2 !== 0) {
     return result.concat(...arr.slice(tail),
-        ...arr.slice(head, tail),
-        ...arr.slice(0, head));
+      ...arr.slice(head, tail),
+      ...arr.slice(0, head));
   }
   return result.concat(...arr.slice(tail), ...arr.slice(0, head));
 }

@@ -28,9 +28,9 @@
  *
  */
 function getFizzBuzz(num) {
-  if (num %3 === 0) return 'Fizz';
-  if (num %5 === 0) return 'Buzz';
-  if (num %3 === 0 && num %5 === 0) return 'FizzBuzz';
+  if (num % 3 === 0) return 'Fizz';
+  if (num % 5 === 0) return 'Buzz';
+  if (num % 3 === 0 && num % 5 === 0) return 'FizzBuzz';
 
   return num;
 }
@@ -48,7 +48,7 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-  return n ? n*getFactorial(n-1) : 1;
+  return n ? n * getFactorial(n - 1) : 1;
 }
 
 
@@ -66,7 +66,7 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
   let sum = 0;
-  for(let i = n1; i < n2; i++) {
+  for (let i = n1; i < n2; i++) {
     sum += i;
   }
   return sum;
@@ -161,7 +161,7 @@ function doRectanglesOverlap(rect1, rect2) {
 function isInsideCircle(circle, point) {
   const x = point.x - circle.center.x;
   const y = point.y - circle.center.y;
-  const radius = circle.radius;
+  const { radius } = circle;
   return (x ** 2) + (y ** 2) < radius ** 2;
 }
 

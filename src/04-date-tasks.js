@@ -57,10 +57,10 @@ function isLeapYear(date) {
   const year = date.getFullYear();
 
   if (year % 4 === 0) {
-  if (year % 100 !== 0) return true;
-  if (year % 400 === 0) return false;
+    if (year % 100 !== 0) return true;
+    if (year % 400 === 0) return false;
   }
-  return false
+  return false;
 }
 
 
@@ -80,7 +80,7 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
- return new Date(endDate - startDate).toISOString().slice(11, -1);
+  return new Date(endDate - startDate).toISOString().slice(11, -1);
 }
 
 
@@ -105,7 +105,7 @@ function angleBetweenClockHands(date) {
   const minutes = date.getUTCMinutes();
   let angle = Math.abs(30 * hours + 0.5 * minutes - 6 * minutes);
   while (angle > 180) angle = Math.abs(360 - angle);
-  return angle * (Math.PI / 180); 
+  return angle * (Math.PI / 180);
 }
 
 
